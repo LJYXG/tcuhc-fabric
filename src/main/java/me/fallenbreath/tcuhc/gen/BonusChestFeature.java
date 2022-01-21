@@ -227,8 +227,8 @@ public class BonusChestFeature extends Feature<DefaultFeatureConfig>
 				build();
 
 		valuableItemList.add(new RandomItem(16, new ItemSupplier(Items.DIAMOND_SWORD)));
-		valuableItemList.add(new RandomItem(24,new ItemSupplier(Items.DIAMOND_AXE)));
-		valuableItemList.add(new RandomItem(24, new ItemSupplier(Items.DIAMOND_PICKAXE)));
+		valuableItemList.add(new RandomItem(22,new ItemSupplier(Items.DIAMOND_AXE)));
+		valuableItemList.add(new RandomItem(22, new ItemSupplier(Items.DIAMOND_PICKAXE)));
 		valuableItemList.add(new RandomItem(20, new ItemSupplier(Items.GOLDEN_APPLE)));
 		valuableItemList.add(new RandomItem(8, new MinMaxSupplier(Items.DIAMOND,1,2)));
 		valuableItemList.add(new RandomItem(16, () -> {
@@ -237,7 +237,7 @@ public class BonusChestFeature extends Feature<DefaultFeatureConfig>
 			return item;
 		}));
 
-		chestItemList.add(new RandomItem(2, new ItemSupplier(Items.APPLE)));
+		chestItemList.add(new RandomItem(4, new ItemSupplier(Items.APPLE)));
 		chestItemList.add(new RandomItem(1, new ItemSupplier(Items.STICK)));
 		chestItemList.add(new RandomItem(1, new ItemSupplier(Items.BONE)));
 		chestItemList.add(new RandomItem(2, new ItemSupplier(Items.STRING)));
