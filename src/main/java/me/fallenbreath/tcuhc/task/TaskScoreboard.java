@@ -23,7 +23,7 @@ public class TaskScoreboard extends TaskTimer {
 	
 	public static final String scoreName = "time";
 	public static final String displayName = "UHC Game";
-	public static final String[] lines = { "Time Remaining:", "Border Radius:", "Nether Close:", "Cave Close:" };
+	public static final String[] lines = { "游戏剩余时间:", "当前世界半径:", "距下届关闭:", "距洞穴关闭:" };
 	
 	private Scoreboard scoreboard;
 	private ScoreboardObjective objective;

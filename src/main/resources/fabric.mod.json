@@ -7,11 +7,12 @@
   "description": "TC UHC in fabric",
   "authors": [
     "Gamepiaynmo",
-    "Fallen_Breath"
+    "Fallen_Breath",
+    "Xi_Guang"
   ],
   "contact": {
-    "homepage": "https://github.com/Fallen-Breath/tcuhc-fabric",
-    "sources": "https://github.com/Fallen-Breath/tcuhc-fabric"
+    "homepage": "https://github.com/LJYXG/tcuhc-fabric/tree/1.16.x-cn-emc-edition",
+    "sources": "https://github.com/LJYXG/tcuhc-fabric/tree/1.16.x-cn-emc-edition"
   },
 
   "icon": "assets/tcuhc/icon.png",

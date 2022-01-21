@@ -202,7 +202,7 @@ public class UhcGameManager extends Taskable {
 	
 	public void startGame(ServerPlayerEntity operator) {
 		if (isGamePlaying || !configManager.isConfiguring()) {
-			operator.sendMessage(new LiteralText("It's not time to start."), false);
+			operator.sendMessage(new LiteralText("还未到开始的时间！！"), false);
 			return;
 		}
 		boolean autoTeams = uhcOptions.getBooleanOptionValue("randomTeams");
@@ -247,8 +247,8 @@ public class UhcGameManager extends Taskable {
 	}
 	
 	private void onTeamWin(UhcGameTeam team) {
-		TitleUtil.sendTitleToAllPlayers(team.getColorfulTeamName() + " Wins !", "Congratulations !");
-		this.broadcastMessage(team.getColorfulTeamName() + " is the winner !");
+		TitleUtil.sendTitleToAllPlayers(team.getColorfulTeamName() + " 赢了 !", " 恭喜 !");
+		this.broadcastMessage(team.getColorfulTeamName() + " 是赢家 !");
 		for (UhcGamePlayer player : playerManager.getCombatPlayers()) {
 			if (player.getStat().getFloatStat(EnumStat.ALIVE_TIME) < 1)
 				player.getStat().setStat(EnumStat.ALIVE_TIME, uhcOptions.getIntegerOptionValue("gameTime") - this.getGameTimeRemaining());

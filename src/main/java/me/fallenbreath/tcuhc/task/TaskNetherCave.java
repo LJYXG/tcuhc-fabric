@@ -59,9 +59,9 @@ public class TaskNetherCave extends TaskTimer {
 		
 		int netherTime = netherCloseTime - timePast;
 		if (netherTime > 0 && netherTime <= 120 && netherTime % 30 == 0) {
-			UhcGameManager.instance.broadcastMessage(Formatting.DARK_RED + "Nether will be closed in " + netherTime + " seconds.");
+			UhcGameManager.instance.broadcastMessage(Formatting.DARK_RED + "下届将在 " + netherTime + " 秒后关闭！！");
 		} else if (netherTime == 0) {
-			UhcGameManager.instance.broadcastMessage(Formatting.DARK_RED + "Nether closed.");
+			UhcGameManager.instance.broadcastMessage(Formatting.DARK_RED + "下届关闭！！");
 		} else if (netherTime < 0) {
 			for (UhcGamePlayer player : combatPlayers) {
 				player.getRealPlayer().ifPresent(playermp -> {
@@ -73,9 +73,9 @@ public class TaskNetherCave extends TaskTimer {
 		
 		int caveTime = caveCloseTime - timePast;
 		if (caveTime > 0 && caveTime <= 120 && caveTime % 30 == 0) {
-			UhcGameManager.instance.broadcastMessage(Formatting.DARK_RED + "Caves will be closed in " + caveTime + " seconds.");
+			UhcGameManager.instance.broadcastMessage(Formatting.DARK_RED + "洞穴将在 " + caveTime + " 秒后关闭！！");
 		} else if (caveTime == 0) {
-			UhcGameManager.instance.broadcastMessage(Formatting.DARK_RED + "Caves closed.");
+			UhcGameManager.instance.broadcastMessage(Formatting.DARK_RED + "洞穴关闭！！");
 			WorldBorder border = UhcGameManager.instance.getOverWorld().getWorldBorder();
 			int finalSize = Math.max((int) border.getSize() / 2, 1);
 			Random random = new Random();

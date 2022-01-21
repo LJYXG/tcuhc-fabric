@@ -43,7 +43,7 @@ public class TaskTitleCountDown extends TaskTimer {
 	
 	@Override
 	public void onFinish() {
-		TitleUtil.sendTitleToAllPlayers("Game Started !", "Enjoy Yourself !");
+		TitleUtil.sendTitleToAllPlayers("游戏正式开始！", "祝你玩的开心！！");
 		UhcGameManager.instance.getUhcPlayerManager().getCombatPlayers().forEach(player -> player.addTask(new TaskFindPlayer(player) {
 			@SuppressWarnings("ConstantConditions")
 			@Override

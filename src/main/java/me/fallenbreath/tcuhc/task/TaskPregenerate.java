@@ -89,7 +89,7 @@ public class TaskPregenerate extends Task
 	private void acceptChunkResult(ChunkPos chunkPos, Either<Chunk, ChunkHolder.Unloaded> result)
 	{
 		this.mcServer.execute(() -> this.removeTicketAt(chunkPos));
-		result.left().orElseThrow(() -> new RuntimeException("Pregenerate for chunk " + chunkPos + " failed"));
+		result.left().orElseThrow(() -> new RuntimeException("区块预生成 " + chunkPos + " 失败"));
 		this.loadedChunkAmount.incrementAndGet();
 		if (this.queuedCount.decrementAndGet() <= ENQUEUE_THRESHOLD)
 		{
@@ -134,7 +134,7 @@ public class TaskPregenerate extends Task
 		}
 		if (say)
 		{
-			UhcGameManager.instance.broadcastMessage(String.format("Chunk generate of %s: %.2f%%, ETA %s", getWorldName(), percentage, makeTime(milliEta)));
+			UhcGameManager.instance.broadcastMessage(String.format("区块生成了 %s: %.2f%%, 还需要 %s", getWorldName(), percentage, makeTime(milliEta)));
 		}
 	}
 
@@ -150,7 +150,7 @@ public class TaskPregenerate extends Task
 	public void onFinish()
 	{
 		long miliPassed = Util.getMeasuringTimeMs() - this.startTimeMili;
-		UhcGameManager.instance.broadcastMessage(String.format("Pre-generating of %s finished, took %s", getWorldName(), makeTime(miliPassed)));
+		UhcGameManager.instance.broadcastMessage(String.format(" %s 的区块预生成已经完毕, 共花费 %s", getWorldName(), makeTime(miliPassed)));
 		this.world.getChunkManager().getLightingProvider().setTaskBatchSize(5);
 		if (this.world == UhcGameManager.instance.getOverWorld())
 		{

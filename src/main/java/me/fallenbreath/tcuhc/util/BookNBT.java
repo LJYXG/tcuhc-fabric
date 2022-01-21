@@ -97,48 +97,48 @@ public class BookNBT {
 				.append(createOptionText(options.getOption("chestItemFrequency")))
 				.append(createOptionText(options.getOption("mobCount")))
 				.append(createReturn())
-				.append(createTextEvent("     Reset Gameplay\n", "/uhc reset 0", "Reset Gameplay Settings", Formatting.GOLD))
-				.append(createTextEvent("    Reset Generation\n", "/uhc reset 1", "Reset Generation Settings", Formatting.GOLD))
-				.append(createTextEvent("       Regenerate\n", "/uhc regen", "Regenerate Terrain", Formatting.LIGHT_PURPLE))
-				.append(createTextEvent("          Start !\n", "/uhc start", "Start the UHC game !", Formatting.LIGHT_PURPLE))
+				.append(createTextEvent("     重置游戏设置\n", "/uhc reset 0", "重置游戏设置", Formatting.GOLD))
+				.append(createTextEvent("    重置生成设置\n", "/uhc reset 1", "重置生成设置", Formatting.GOLD))
+				.append(createTextEvent("       重新生成地形\n", "/uhc regen", "重新生成地形", Formatting.LIGHT_PURPLE))
+				.append(createTextEvent("          开始 !\n", "/uhc start", "开始 UHC game !", Formatting.LIGHT_PURPLE))
 		);
 		
-		return createWrittenBook("sbGP", "UHC Game Configuration", pages);
+		return createWrittenBook("sbGP", "UHC 游戏设置", pages);
 	}
 	
 	public static ItemStack getPlayerBook(UhcGameManager gameManager) {
 		Options options = gameManager.getOptions();
 		int teamCount = options.getIntegerOptionValue("teamCount");
 		boolean randomTeams = options.getBooleanOptionValue("randomTeams");
-		BaseText text = new LiteralText("Select Teams\n\n");
+		BaseText text = new LiteralText("选择队伍\n\n");
 		String line = "***********************\n";
-		text.append(createTextEvent(line, "/uhc select 8", "Select to observe", Formatting.GRAY));
+		text.append(createTextEvent(line, "/uhc select 8", "选择参观游戏", Formatting.GRAY));
 		if (randomTeams)
-			text.append(createTextEvent(line, "/uhc select 9", "Select to fight", Formatting.BLACK));
+			text.append(createTextEvent(line, "/uhc select 9", "选择参与到战斗当中", Formatting.BLACK));
 		else {
 			switch ((UhcGameManager.EnumMode) options.getOptionValue("gameMode")) {
 				case NORMAL: {
-					text.append(createTextEvent(line, "/uhc select 9", "Select to join random team", Formatting.BLACK));
+					text.append(createTextEvent(line, "/uhc select 9", "选择随机加入队伍", Formatting.BLACK));
 					for (int i = 0; i < teamCount; i++) {
 						UhcGameColor color = UhcGameColor.getColor(i);
-						text.append(createTextEvent(line, "/uhc select " + color.getId(), "Select to join " + color.dyeColor, color.chatColor));
+						text.append(createTextEvent(line, "/uhc select " + color.getId(), "选择加入 " + color.dyeColor, color.chatColor));
 					}
 					break;
 				}
 				case SOLO: 
 				case GHOST:
-					text.append(createTextEvent(line, "/uhc select 9", "Select to fight", Formatting.BLACK));
+					text.append(createTextEvent(line, "/uhc select 9", "选择战斗！", Formatting.BLACK));
 					break;
 				case BOSS: {
-					text.append(createTextEvent(line, "/uhc select 0", "Select to become a bully", Formatting.RED));
-					text.append(createTextEvent(line, "/uhc select 1", "Select to become a vegetable chicken", Formatting.BLUE));
+					text.append(createTextEvent(line, "/uhc select 0", "选择成为恶霸？", Formatting.RED));
+					text.append(createTextEvent(line, "/uhc select 1", "选择成为菜鸡？", Formatting.BLUE));
 				}
 			}
 		}
 		NbtList pages = new NbtList();
 		appendPageText(pages, text);
 		
-		return createWrittenBook("sbGP", "UHC Team Selection", pages);
+		return createWrittenBook("sbGP", "UHC 队伍选择", pages);
 	}
 	
 	public static BaseText createPlayerText(UhcGamePlayer player) {

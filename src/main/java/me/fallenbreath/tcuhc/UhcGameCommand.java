@@ -100,7 +100,7 @@ public class UhcGameCommand
 	private static int sendVersionInfo(ServerCommandSource sender) {
 		sender.sendFeedback(new LiteralText(Formatting.GOLD + "== UHC Plugin for " + Formatting.RED + "T" + Formatting.BLUE + "opology" + Formatting.RED + "C" + Formatting.BLUE + "raft" + Formatting.GOLD + " =="), false);
 		sender.sendFeedback(new LiteralText("          " + Formatting.GREEN + "Plugin Version " + Formatting.GOLD + "1.4.6"), false);
-		sender.sendFeedback(new LiteralText("     " + Formatting.GREEN + "Minecraft Version " + Formatting.GOLD + "1.12-pre7"), false);
+		sender.sendFeedback(new LiteralText("     " + Formatting.GREEN + "Minecraft Version " + Formatting.GOLD + "1.16.X"), false);
 		return 1;
 	}
 
@@ -119,7 +119,7 @@ public class UhcGameCommand
 		BlockPos pos = gamePlayer.getDeathPos();
 		if (pos.equals(BlockPos.ORIGIN))
 		{
-			sender.sendFeedback(new LiteralText("You are still alive."), false);
+			sender.sendFeedback(new LiteralText("你还活着！！"), false);
 		}
 		else
 		{
@@ -187,15 +187,15 @@ public class UhcGameCommand
 					break;
 				case "set":
 					UhcGameManager.instance.getConfigManager().inputOptionValue(option);
-					sender.sendFeedback(new LiteralText(String.format("Input the value for %s:", option.getName())), false);
+					sender.sendFeedback(new LiteralText(String.format("输入想要设置 %s 的值:", option.getName())), false);
 					break;
 				default:
-					sender.sendFeedback(new LiteralText(String.format("Unknown operation %s", operation)), false);
+					sender.sendFeedback(new LiteralText(String.format("未知操作 %s", operation)), false);
 			}
 		}
 		else
 		{
-			sender.sendFeedback(new LiteralText(String.format("Unknown option %s", optionName)), false);
+			sender.sendFeedback(new LiteralText(String.format("未知操作 %s", optionName)), false);
 		}
 		return 1;
 	}
@@ -220,7 +220,7 @@ public class UhcGameCommand
 		}
 		else
 		{
-			source.sendFeedback(new LiteralText(Formatting.RED + "Game has not started yet"), false);
+			source.sendFeedback(new LiteralText(Formatting.RED + "游戏还未开始！"), false);
 			return false;
 		}
 	}
