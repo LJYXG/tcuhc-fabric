@@ -10,6 +10,11 @@ Changes:
 - Villager never losses its job
 - (1.16+) Added netherite scrap trade: 1 -> \[20, 32\]
 
-新更改：
+更改（1.0.5）：
 - 部分内容进行了汉化
 - 对宝箱内物品进行了个性化更改
+
+更改（1.0.6）：
+- 更新版本号
+- 增加以及修复汉化
+- 调整宝箱概率
