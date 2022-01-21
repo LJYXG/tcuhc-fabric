@@ -227,25 +227,27 @@ public class BonusChestFeature extends Feature<DefaultFeatureConfig>
 				build();
 
 		valuableItemList.add(new RandomItem(16, new ItemSupplier(Items.DIAMOND_SWORD)));
+		valuableItemList.add(new RandomItem(24,new ItemSupplier(Items.DIAMOND_AXE)));
 		valuableItemList.add(new RandomItem(24, new ItemSupplier(Items.DIAMOND_PICKAXE)));
 		valuableItemList.add(new RandomItem(20, new ItemSupplier(Items.GOLDEN_APPLE)));
-		valuableItemList.add(new RandomItem(8, new ItemSupplier(Items.DIAMOND)));
+		valuableItemList.add(new RandomItem(8, new MinMaxSupplier(Items.DIAMOND,1,2)));
 		valuableItemList.add(new RandomItem(16, () -> {
 			ItemStack item = new ItemStack(Items.ENCHANTED_BOOK);
 			EnchantedBookItem.addEnchantment(item, new EnchantmentLevelEntry(POSSIBLE_ENCHANTMENTS[rand.nextInt(POSSIBLE_ENCHANTMENTS.length)], rand.nextInt(4) == 0 ? 2 : 1));
 			return item;
 		}));
 
+		chestItemList.add(new RandomItem(2, new ItemSupplier(Items.APPLE)));
 		chestItemList.add(new RandomItem(1, new ItemSupplier(Items.STICK)));
 		chestItemList.add(new RandomItem(1, new ItemSupplier(Items.BONE)));
 		chestItemList.add(new RandomItem(2, new ItemSupplier(Items.STRING)));
 		chestItemList.add(new RandomItem(2, new MinMaxSupplier(Items.IRON_INGOT, 1, 2)));
-		chestItemList.add(new RandomItem(3, new ItemSupplier(Items.GOLD_INGOT)));
+		chestItemList.add(new RandomItem(3, new MinMaxSupplier(Items.GOLD_INGOT, 1, 2)));
 		chestItemList.add(new RandomItem(3, new ItemSupplier(Items.CHORUS_FRUIT)));
 		chestItemList.add(new RandomItem(5, new ItemSupplier(Items.LEATHER)));
 		chestItemList.add(new RandomItem(5, new MinMaxSupplier(Items.EXPERIENCE_BOTTLE, 2, 4)));
 
-		emptyItemList.add(new RandomItem(1, () -> new ItemStack(Blocks.DEAD_BUSH).setCustomName(new LiteralText("There should be something here, but ..."))));
+		emptyItemList.add(new RandomItem(1, () -> new ItemStack(Blocks.DEAD_BUSH).setCustomName(new LiteralText("这里应该是有东西的, 但是 ..."))));
 
 		chestChance = UhcGameManager.instance.getOptions().getFloatOptionValue("chestFrequency");
 		emptyChestChance = UhcGameManager.instance.getOptions().getFloatOptionValue("trappedChestFrequency");
