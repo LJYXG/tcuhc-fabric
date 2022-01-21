@@ -134,7 +134,7 @@ public class TaskPregenerate extends Task
 		}
 		if (say)
 		{
-			UhcGameManager.instance.broadcastMessage(String.format("区块生成了 %s: %.2f%%, 还需要 %s", getWorldName(), percentage, makeTime(milliEta)));
+			UhcGameManager.instance.broadcastMessage(String.format(" %s 区块生成: %.2f%%, 还需要 %s", getWorldName(), percentage, makeTime(milliEta)));
 		}
 	}
 
