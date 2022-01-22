@@ -48,7 +48,7 @@ public class UhcGameTeam
 	static class TeamType {
 		private UhcGameColor color = UhcGameColor.WHITE;
 		private UhcGamePlayer player;
-		private String name = "Team Empty", teamName = "Team Empty";
+		private String name = "Team Empty", teamName = "Team Empty"; // TODO:在以后团队游戏中遇到解决
 		
 		public void setColor(UhcGameColor color) {
 			this.color = color;

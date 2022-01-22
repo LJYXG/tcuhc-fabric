@@ -41,7 +41,7 @@ public class BookNBT {
 	public static BaseText createOptionText(Optional<Option> opt) {
 		return (BaseText)opt.map(option -> createTextEvent(option.getName(), null, option.getDescription(), Formatting.BLUE)
 				.append(createTextEvent(" < ", "/uhc option " + option.getId() + " sub", option.getDecString(), Formatting.RED))
-				.append(createTextEvent(option.getStringValue(), "/uhc option " + option.getId() + " set", "Click to input value", Formatting.GOLD))
+				.append(createTextEvent(option.getStringValue(), "/uhc option " + option.getId() + " set", "单机此处键入数值（聊天框）", Formatting.GOLD))
 				.append(createTextEvent(" >", "/uhc option " + option.getId() + " add", option.getIncString(), Formatting.GREEN))
 				.append("\n")).orElse(new LiteralText("Unknown Option"));
 	}
@@ -100,7 +100,7 @@ public class BookNBT {
 				.append(createTextEvent("      重置游戏设置\n", "/uhc reset 0", "重置游戏设置", Formatting.GOLD))
 				.append(createTextEvent("      重置生成设置\n", "/uhc reset 1", "重置生成设置", Formatting.GOLD))
 				.append(createTextEvent("      重新生成地形\n", "/uhc regen", "重新生成地形", Formatting.LIGHT_PURPLE))
-				.append(createTextEvent("          开始 !\n", "/uhc start", "开始 UHC game !", Formatting.LIGHT_PURPLE))
+				.append(createTextEvent("           开始 !\n", "/uhc start", "开始 UHC game !", Formatting.LIGHT_PURPLE))
 		);
 		
 		return createWrittenBook("sbGP", "UHC 游戏设置", pages);

@@ -104,10 +104,14 @@ public class PlayerItems
 
 	static
 	{
+		//EMC Server Players
 		items.put("ZJHCOFI", Builder.create(Items.NETHERITE_SWORD).named("ZJHCOFI‘s 宝剑").enchant(Enchantments.SHARPNESS, 5).expensive().get());
 		items.put("RFTyitoti", Builder.create(Blocks.TNT).named("Crazy!").enchant(Enchantments.SHARPNESS, 3).get());
-		items.put("UN_G",Builder.create(Items.LIGHT_GRAY_STAINED_GLASS_PANE).named("0.0").enchant(Enchantments.SHARPNESS, 10).get());
-		items.put("Xi_Guang",Builder.create(Items.PUFFERFISH).named("gu~gu~gu~").enchant(Enchantments.SHARPNESS, 10).get());
+		items.put("UN_G",Builder.create(Items.LIGHT_GRAY_STAINED_GLASS_PANE).named("0.0").enchant(Enchantments.SHARPNESS, 5).get());
+		items.put("Xi_Guang",Builder.create(Items.PUFFERFISH).named("gū~gū~gū~").enchant(Enchantments.SHARPNESS, 5).get());
+		items.put("keven10n08y02r",Builder.create(Items.STICK).named("蛋黄").enchant(Enchantments.SHARPNESS,5).get());
+		items.put("Yi_Ge_Ren",Builder.create(Items.STICK).named("一个人").enchant(Enchantments.SHARPNESS,5).get());
+
 		items.put("hungryartist_", Builder.create(Items.POTION).potion(Potions.STRONG_POISON).named("hungryartist_'s holy water").get());
 		items.put("_Flag_E_", Builder.create(Blocks.POPPY).get());
 		items.put("Spring0809", Builder.create(Blocks.TNT).get());

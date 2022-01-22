@@ -100,7 +100,7 @@ public class UhcGamePlayer extends Taskable {
 		CHEST_FOUND("发现宝箱数量"),
 		EMPTY_CHEST_FOUND("发现空宝箱数量"),
 		DIAMOND_FOUND("发现钻石的数量"),
-		HEALTH_HEALED("Health Healed"),
+		HEALTH_HEALED("恢复的血量"),//原文"Health Healed",此值应该是玩家掉血后通过金屁屁恢复的血量
 		ALIVE_TIME("存活时间");
 		
 		public final String name;

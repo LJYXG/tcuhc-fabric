@@ -213,7 +213,7 @@ public class UhcPlayerManager
 	private String chatMessage(PlayerEntity player, String msg, boolean secret) {
 		UhcGamePlayer gamePlayer = getGamePlayer(player);
 		Formatting color = gamePlayer.getTeam() == null ? Formatting.WHITE : gamePlayer.getTeam().getTeamColor().chatColor;
-		return Formatting.AQUA.toString() + "[" + Formatting.GOLD + (secret ? "To Team" : "To All") + Formatting.AQUA.toString() + "]" +
+		return Formatting.AQUA.toString() + "[" + Formatting.GOLD + (secret ? "队内" : "全服") + Formatting.AQUA.toString() + "]" +
 				color + player.getName().getString() + Formatting.YELLOW + ": " + Formatting.WHITE + msg;
 	}
 	
@@ -286,7 +286,7 @@ public class UhcPlayerManager
 			}
 		} else this.randomSpawnPosition(player);
 	}
-	
+	//TODO：日后考虑汉化此处
 	public void onPlayerDamaged(ServerPlayerEntity player, DamageSource source, float amount) {
 		if (gameManager.isGamePlaying()) {
 			String msg = String.format("You got %.2f damage from ", amount);
@@ -376,7 +376,7 @@ public class UhcPlayerManager
 		for (UhcGamePlayer gamePlayer : getAllPlayers()) {
 			UhcGameColor color = gamePlayer.getColorSelected().orElse(null);
 			if (color == null) {
-				gamePlayer.getRealPlayer().ifPresent(player -> player.sendMessage(new LiteralText(Formatting.DARK_RED + "Please select a team to join, others are waiting for you !"), false));
+				gamePlayer.getRealPlayer().ifPresent(player -> player.sendMessage(new LiteralText(Formatting.DARK_RED + "请选择一个队伍加入！其他人正在等你！！"), false));
 				operator.ifPresent(player -> player.sendMessage(new LiteralText(Formatting.DARK_RED + gamePlayer.getName()), false));
 				alright = false;
 			} else {
@@ -386,7 +386,7 @@ public class UhcPlayerManager
 		}
 		
 		if (!alright) {
-			operator.ifPresent(player -> player.sendMessage(new LiteralText(Formatting.DARK_RED + "Some players has not made a choice."), false));
+			operator.ifPresent(player -> player.sendMessage(new LiteralText(Formatting.DARK_RED + "还有玩家尚未做出选择~"), false));
 			return false;
 		}
 		
@@ -439,7 +439,7 @@ public class UhcPlayerManager
 		for (UhcGamePlayer gamePlayer : getAllPlayers()) {
 			UhcGameColor color = gamePlayer.getColorSelected().orElse(null);
 			if (color == null) {
-				gamePlayer.getRealPlayer().ifPresent(player -> player.sendMessage(new LiteralText(Formatting.DARK_RED + "Please select a team to join, others are waiting for you !"), false));
+				gamePlayer.getRealPlayer().ifPresent(player -> player.sendMessage(new LiteralText(Formatting.DARK_RED + "请选择一个队伍加入！其他人正在等你！！"), false));
 				operator.ifPresent(player -> player.sendMessage(new LiteralText(Formatting.DARK_RED + gamePlayer.getName()), false));
 				alright = false;
 			} else {
@@ -449,7 +449,7 @@ public class UhcPlayerManager
 		}
 		
 		if (!alright) {
-			operator.ifPresent(player -> player.sendMessage(new LiteralText(Formatting.DARK_RED + "Some players has not made a choice."), false));
+			operator.ifPresent(player -> player.sendMessage(new LiteralText(Formatting.DARK_RED + "还有玩家尚未做出选择~"), false));
 			return false;
 		}
 		
@@ -512,13 +512,13 @@ public class UhcPlayerManager
 					if (player.getColorSelected().orElse(UhcGameColor.BLUE) == UhcGameColor.RED) {
 						if (boss == null) boss = player;
 						else {
-							player.getRealPlayer().ifPresent(playermp -> playermp.sendMessage(new LiteralText(Formatting.DARK_RED + "There cannot be more than one boss."), false));
+							player.getRealPlayer().ifPresent(playermp -> playermp.sendMessage(new LiteralText(Formatting.DARK_RED + "不能有多个BOSS！！"), false));
 							alright = false;
 						}
 					}
 				}
 				if (!alright) {
-					operator.ifPresent(player -> player.sendMessage(new LiteralText(Formatting.DARK_RED + "There are more than one boss."), false));
+					operator.ifPresent(player -> player.sendMessage(new LiteralText(Formatting.DARK_RED + "BOSS数量超出1个！！"), false));
 					return false;
 				}
 				teams.add(new UhcGameTeam().setColorTeam(UhcGameColor.RED).addPlayer(boss));
