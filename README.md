@@ -10,6 +10,10 @@ Changes:
 - Villager never losses its job
 - (1.16+) Added netherite scrap trade: 1 -> \[20, 32\]
 
+> *注意* 本项目 forke from Fallen_Breath 的 [TCUHC-fabic](https://github.com/Fallen-Breath/tcuhc-fabric)
+>
+> 并针对我群组需求汉化 并进行对应的调整
+
 更改（1.0.5）：
 - 部分内容进行了汉化
 - 对宝箱内物品进行了个性化更改
